@@ -1200,7 +1200,7 @@ class: text-center p-12
 transition: slide-up
 ---
 
-# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">GitHub</span>
+# <span class="text-4xl fade-in font-extrabold drop-shadow-lg">GitHub</span>
 
 <section>
     <div class="m-2 w-full  bg-white bg-opacity-20 rounded-xl p-2 shadow-2xl">
@@ -1223,6 +1223,51 @@ transition: slide-up
 <div class="flex fade-in items-center justify-center h-full">
   <img class="h-60" src="/github.png" alt="github" />
 </div>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: two-cols
+class: text-center p-12
+transition: slide-up
+---
+
+<div class="flex fade-in items-center justify-center h-full">
+  <img class="h-65" src="/github-desktop.png" alt="github-desktop" />
+</div>
+
+::right::
+
+# <span class="text-4xl fade-in font-extrabold drop-shadow-lg">GitHub Desktop</span>
+
+<section>
+    <div class="m-2 w-full  bg-white bg-opacity-20 rounded-xl p-2 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h3 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            GitHub Desktop es una aplicación gratuita y de código abierto que facilita el uso de Git mediante una interfaz gráfica, permitiendo gestionar repositorios y realizar operaciones como commits y ramas sin usar la línea de comandos.
+          </h3>
+        </div>
+    </div>
+</section>
 
 <style>
     .fade-in {
