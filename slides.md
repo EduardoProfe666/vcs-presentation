@@ -1,9 +1,9 @@
 ---
-title: AICA+ Industria 4.0
-titleTemplate: '%s - Presentación'
-description: Presentación del proyecto de Industria 4.0 de los Laboratorios Farmacéuticos AICA+
-keywords: aica+,industria4.0
-info: Presentación del proyecto de Industria 4.0 de los Laboratorios Farmacéuticos AICA+
+title: VCS
+titleTemplate: '%s - Conferencia JCE'
+description: Conferencia de control de versiones distribuido para la JCE Informática 2025
+keywords: vcs, git, github, jce, informatica, eltoque
+info: Conferencia de control de versiones distribuido para la JCE Informática 2025
 author: AICA+
 favicon: /favicon.ico
 
@@ -17,24 +17,40 @@ drawings:
   persist: false
 transition: slide-left
 mdc: true
+
+addons:
+  - fancy-arrow
+  - slidev-component-spotlight
+  - slidev-component-scroll
 ---
 
 <div class="background-container"></div>
 
-# <span class="fade-in">Industria 4.0 en los Laboratorios Farmacéuticos AICA+</span>
+# <span class="fade-in">Control de Versiones Distribuido</span>
+
+
+### <span class="fade-in">VCS, Git, GitHub, Devops</span>
 
 <div class="text-xl text-gray-200 mt-4 fade-in">
-Casi Ing. Eduardo Alejandro Gonzalez Martell
+Caso de estudio: Aplicación web para el análisis de las tasas de cambio de divisas en el mercado informal cubano,
+con tecnología de elToque
 </div>
 
-<div class="abs-br m-6 text-xl fade-in">
-  <a href="https://github.com/EduardoProfe666/aica-industry-4.0" target="_blank" class="slidev-icon-btn">
+<div class="abs-br m-6 text-xl fade-in flex space-x-4">
+  <a href="https://github.com/EduardoProfe666/vcs-presentation" target="_blank" class="slidev-icon-btn" aria-label="Código fuente presentación GitHub">
     <carbon:logo-github />
+  </a>
+  <a href="https://tasas-cuba.vercel.app/" target="_blank" class="slidev-icon-btn" aria-label="Ir a la aplicación tasas-cuba">
+    <carbon:app />
+  </a>
+
+  <a href="https://github.com/EduardoProfe666/tasas-cuba" target="_blank" class="slidev-icon-btn" aria-label="Código fuente de la aplicación tasas-cuba en GitHub">
+    <carbon:kubernetes-pod />
   </a>
 </div>
 
 <footer style="color: #05d8f3; font-weight: bold;" class="fade-in abs-b m-6">
-  © 2025 <a href="https://www.aica.cu" target="_blank">AICA+</a>
+  <a href="https://eduardoprofe666.github.io" target="_blank">Ing. Eduardo Alejandro Gonzalez Martell</a>
 </footer>
 
 <style>
@@ -44,10 +60,10 @@ Casi Ing. Eduardo Alejandro Gonzalez Martell
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/aica-4.webp');
+    background-image: url('/banner-inicio.webp');
     background-size: cover;
     background-position: center;
-    filter: blur(3px);
+    filter: blur(8px);
     z-index: -1;
   }
 
@@ -78,528 +94,1410 @@ Casi Ing. Eduardo Alejandro Gonzalez Martell
 </style>
 
 ---
+layout: center
+transition: slide-left
+---
+
+<div class="image"></div>
+
+<style>
+  .image {
+    content: "";
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background-image: url('/folders.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    pointer-events: none;
+  }
+</style>
+
+
+---
+layout: center
+class: text-center p-12
 transition: slide-up
 ---
 
-# Desarrollo de la Industria 4.0
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">¿Qué es un VCS?</span>
 
-<div class="timeline-grid m-6">
+<section>
   <v-click>
-    <div class="timeline-item" v-motion :initial="{ opacity: 0, scale: 0.8 }" :enter="{ opacity: 1, scale: 1, transition: { delay: 150 } }">
-      <div class="year"><carbon:building-insights-1 />&nbsp; 1784</div>
-      <div class="content">
-        <h3>Primera Revolución</h3>
-        <p>Mecanización y energía de vapor</p>
-      </div>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h3 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Un sistema de control de versiones (VCS) registra los cambios en archivos a lo largo del tiempo, permitiéndote recuperar versiones anteriores cuando las necesites.
+          </h3>
+        </div>
     </div>
   </v-click>
-
-  <v-click>
-    <div class="timeline-item" v-motion :initial="{ opacity: 0, scale: 0.8 }" :enter="{ opacity: 1, scale: 1, transition: { delay: 150 } }">
-      <div class="year"><carbon:lightning />&nbsp; 1870</div>
-      <div class="content">
-        <h3>Segunda Revolución</h3>
-        <p>Producción en masa y electricidad</p>
-      </div>
-    </div>
-  </v-click>
-
-  <v-click>
-    <div class="timeline-item" v-motion :initial="{ opacity: 0, scale: 0.8 }" :enter="{ opacity: 1, scale: 1, transition: { delay: 150 } }">
-      <div class="year"><carbon:machine-learning />&nbsp; 1969</div>
-      <div class="content">
-        <h3>Tercera Revolución</h3>
-        <p>Automatización y computadoras</p>
-      </div>
-    </div>
-  </v-click>
-
-  <v-click>
-    <div class="timeline-item" v-motion :initial="{ opacity: 0, scale: 0.8 }" :enter="{ opacity: 1, scale: 1, transition: { delay: 150 } }">
-      <div class="year"><carbon:ibm-cloud-internet-services />&nbsp; 2010</div>
-      <div class="content">
-        <h3>Cuarta Revolución</h3>
-        <p>IoT, IA y sistemas ciber-físicos</p>
-      </div>
-    </div>
-  </v-click>
-</div>
-
-<footer style="color: #05d8f3; font-weight: bold;" class="fade-in abs-b m-6 text-center">
-  © 2025 <a href="https://www.aica.cu" target="_blank">AICA+</a>
-</footer>
+</section>
 
 <style>
-.timeline-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-
-.timeline-item {
-  padding: 15px;
-  border-left: 3px solid #0097a7;
-  background-color: rgba(255, 255, 255, 0.04);
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.year {
-   color: #0097a7;
-   font-weight: bold;
-   margin-bottom: 5px;
-   font-size: 2em;
-   display: flex;
-   align-items: center;
-}
-
-.content {
-   padding-left: 10px;
-}
-
-.content h3 {
-   color: #0097a7;
-   margin-top: -5px;
-   margin-bottom: -5px;
-   font-size: 1.2em;
-}
-
-.content p {
-   margin-top: -5px;
-   margin-bottom: -5px;
-   font-size: 0.95em;
-   color: #666;
-}
-
-h1 {
-    background-color: #81dbff;
-    background-image: linear-gradient(45deg, #89effd 20%, #46c0ed 50%);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-  }
-</style>
-
-
----
-transition: fade-out
----
-
-# Niveles de Madurez de la Academia acatech
-
-<div class="grid grid-cols-3 gap-4 mt-8">
-  <v-click>
-    <div
-    v-motion
-    :initial="{ y: 50, opacity: 0 }"
-    :enter="{ y: 0, opacity: 1, transition: { delay: 150 } }"
-    class="maturity-card"
-  >
-    <div class="card-number">1</div>
-    <h3>Informatizar</h3>
-    <p>Digitalización básica de procesos individuales</p>
-  </div>
- </v-click>
-
-  <v-click>
-  <div
-    v-motion
-    :initial="{ y: 50, opacity: 0 }"
-    :enter="{ y: 0, opacity: 1, transition: { delay: 150 } }"
-    class="maturity-card"
-  >
-    <div class="card-number">2</div>
-    <h3>Integrar</h3>
-    <p>Conexión de sistemas aislados en plataformas integradas</p>
-  </div>
-  </v-click>
-
-  <v-click>
-  <div
-    v-motion
-    :initial="{ y: 50, opacity: 0 }"
-    :enter="{ y: 0, opacity: 1, transition: { delay: 150 } }"
-    class="maturity-card"
-  >
-    <div class="card-number">3</div>
-    <h3>Visualizar</h3>
-    <p><span style="font-weight: bold;">¿Qué está pasando?</span> <br>Monitoreo en tiempo real</p>
-  </div>
-  </v-click>
-
-  <v-click>
-  <div
-    v-motion
-    :initial="{ y: 50, opacity: 0 }"
-    :enter="{ y: 0, opacity: 1, transition: { delay: 150 } }"
-    class="maturity-card"
-  >
-    <div class="card-number">4</div>
-    <h3>Entender</h3>
-    <p><span style="font-weight: bold;">¿Por qué está pasando?</span> <br>Generación de conocimiento a partir de datos</p>
-  </div>
-  </v-click>
-
-  <v-click>
-  <div
-    v-motion
-    :initial="{ y: 50, opacity: 0 }"
-    :enter="{ y: 0, opacity: 1, transition: { delay: 150 } }"
-    class="maturity-card"
-  >
-    <div class="card-number">5</div>
-    <h3>Predecir</h3>
-    <p><span style="font-weight: bold;">¿Qué pasará?</span> <br>Capacidad predictiva en procesos productivos</p>
-  </div>
-  </v-click>
-
-  <v-click>
-  <div
-    v-motion
-    :initial="{ y: 50, opacity: 0 }"
-    :enter="{ y: 0, opacity: 1, transition: { delay: 150 } }"
-    class="maturity-card"
-  >
-    <div class="card-number">6</div>
-    <h3>Optimizar</h3>
-    <p><span style="font-weight: bold;">¿Cómo puedo responder autónomamente?</span> <br>Mejora continua y adaptativa</p>
-  </div>
-  </v-click>
-</div>
-
-<footer style="color: #05d8f3; font-weight: bold;" class="fade-in abs-b m-6 text-center">
-  © 2025 <a href="https://www.aica.cu" target="_blank">AICA+</a>
-</footer>
-
-<style>
-.maturity-card {
-  background: rgba(0, 151, 167, 0.1);
-  border-radius: 8px;
-  padding: 20px;
-  position: relative;
-  transition: transform 0.3s;
-}
-
-.maturity-card:hover {
-  transform: translateY(-5px);
-}
-
-.card-number {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background: #0097a7;
-  color: white;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-}
-
-.maturity-card h3 {
-  color: #0097a7;
-  margin-bottom: 10px;
-}
-
-.maturity-card p {
-  font-size: 0.9em;
-  color: #666;
-}
-
-h1 {
-    background-color: #81dbff;
-    background-image: linear-gradient(45deg, #89effd 20%, #46c0ed 50%);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
 
 ---
-transition: slide-right
+layout: center
+class: text-center p-12
+transition: slide-up
 ---
 
-# ¿Qué es AICA+?
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">¿Qué permite hacer un VCS?</span>
 
-<div class="container mx-auto px-4 mt-10">
-  <p class="text-gray-700 mb-6">
-    AICA+ es una empresa líder en el sector farmacéutico, comprometida con la innovación
-    y la excelencia en la producción de medicamentos. Nuestra misión es mejorar la vida
-    de las personas a través de soluciones farmacéuticas de alta calidad.
-  </p>
-
-  <div class="grid grid-cols-3 gap-6">
-    <div 
-      v-motion 
-      :initial="{ scale: 0.8, opacity: 0 }" 
-      :enter="{ scale: 1, opacity: 1, transition: { delay: 300 } }" 
-      class="feature-card"
-      v-click="{ scale: 1.05 }"
-    >
-      <div class="icon">🔬</div>
-      <h3>Innovación</h3>
-      <p>Desarrollo continuo de nuevas soluciones y tecnologías</p>
+<section>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+            <div class="space-y-8 text-xl font-semibold leading-relaxed drop-shadow-md list-none">
+                  <v-click><p>✅ Permite volver a versiones anteriores de archivos o del proyecto, disminuyendo significativamente el nivel de estrés post-traumático.</p></v-click>
+                  <v-click><p>🕵️‍♂️ Facilita comparar los cambios en el tiempo, pudiendo saber quién tiene la culpa de que el proyecto no funcione.</p></v-click>
+                  <v-click><p>💾 Si tu computadora se rompe, se corrompe el proyecto o se va la luz, permite recuperar todo sin llorar mucho.</p></v-click>
+                  <v-click><p>🤝 Si estás trabajando con otros, gestiona los cambios simultáneos sin conflictos, tanto de código como personales.</p></v-click>
+            </div>
+        </div>
     </div>
-    <div 
-      v-motion 
-      :initial="{ scale: 0.8, opacity: 0 }" 
-      :enter="{ scale: 1, opacity: 1, transition: { delay: 400 } }" 
-      class="feature-card"
-      v-click="{ scale: 1.05 }"
-    >
-      <div class="icon">✨</div>
-      <h3>Calidad</h3>
-      <p>Compromiso con los más altos estándares de la industria</p>
-    </div>
-    <div 
-      v-motion 
-      :initial="{ scale: 0.8, opacity: 0 }" 
-      :enter="{ scale: 1, opacity: 1, transition: { delay: 500 } }" 
-      class="feature-card"
-      v-click="{ scale: 1.05 }"
-    >
-      <div class="icon">📦</div>
-      <h3>+190 Productos</h3>
-      <p>Amplia gama de soluciones farmacéuticas disponibles</p>
-    </div>
-  </div>
-</div>
-
-<div class="abs-br m-6 flex text-xl fade-in">
-  <a href="https://www.instagram.com/laboratorios_aica" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-instagram />
-  </a>
-  <a href="https://twitter.com/AicaLaboratorio" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-twitter />
-  </a>
- <a href="https://www.facebook.com/Laboratorios.aica" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-facebook />
-  </a>
-  <a href="https://www.youtube.com/channel/UCw6xSmlrNNkzFN3RkoYAaJA" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-youtube />
-  </a>
-  <a href="https://www.aica.cu" target="_blank" class="slidev-icon-btn">
-    <carbon:flight-international />
-  </a>
-</div>
-
-<footer style="color: #05d8f3; font-weight: bold;" class="fade-in abs-b m-6 text-center">
-  © 2025 <a href="https://www.aica.cu" target="_blank">AICA+</a>
-</footer>
+</section>
 
 <style>
-.feature-card {
-  background: rgba(0, 151, 167, 0.05);
-  border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-}
-
-.icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.feature-card h3 {
-  color: #0097a7;
-  margin-bottom: 0.5rem;
-}
-
-.feature-card p {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-h1 {
-    background-color: #81dbff;
-    background-image: linear-gradient(45deg, #89effd 20%, #46c0ed 50%);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
 
 ---
-transition: fade
+layout: center
+class: text-center p-12
+transition: slide-left
 ---
 
-# Video Promocional de Laboratorios Farmacéuticos AICA+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Clasificación</span>
 
-<div class="flex justify-center">
-  <Youtube id="BEjR-ZaOJFY" width="550" height="350" />
-</div>
-
-<footer style="color: #05d8f3; font-weight: bold;" class="fade-in abs-b m-6 text-center">
-  © 2025 <a href="https://www.aica.cu" target="_blank">AICA+</a>
-</footer>
+<section>
+    <div>
+    <v-click>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h2 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Locales
+          </h2>
+        </div>
+    </div>
+    </v-click>
+    </div>
+    <div></div>
+    <div>
+    <v-click>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h2 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Centralizados
+          </h2>
+        </div>
+    </div>
+    </v-click>
+    </div>
+    <div></div>
+    <div>
+    <v-click>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h2 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Distribuidos
+          </h2>
+        </div>
+    </div>
+    </v-click>
+    </div>
+</section>
 
 <style>
-h1 {
-    background-color: #81dbff;
-    background-image: linear-gradient(45deg, #89effd 20%, #46c0ed 50%);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
 
 ---
-transition: slide-down
+layout: two-cols
+class: text-center p-12
+transition: slide-up
 ---
 
-# Ecosistema AICA+ 4.0
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">VCS Locales</span>
 
-<div class="flex justify-center items-center">
-  <div class="card mt-5">
-    <img
-      src="/ecosystem.webp"
-      alt="Ecosistema AICA+"
-      class="card-image"
-    />
-  </div>
+<section>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h3 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Manejan una simple base de datos en local que lleva el registro de todos los cambios 
+            realizados en los archivos. Un ejemplo de VCS local es RCS.
+          </h3>
+        </div>
+    </div>
+</section>
+
+::right::
+
+<div class="flex fade-in items-center justify-center h-full">
+  <img class="h-90" src="/local.png" alt="local" />
 </div>
 
-<footer style="color: #05d8f3; font-weight: bold;" class="fade-in abs-b m-6 text-center">
-  © 2025 <a href="https://www.aica.cu" target="_blank">AICA+</a>
-</footer>
-
 <style>
-.card {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.card-image {
-  width: 500px;
-  height: auto;
-  border-radius: 12px;
-}
-
-h1 {
-    background-color: #81dbff;
-    background-image: linear-gradient(45deg, #89effd 20%, #46c0ed 50%);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-}
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>
 
-
 ---
-transition: fade
+layout: center
+class: text-center p-12
+transition: slide-left
 ---
 
-# Proyectos AICA+ 4.0
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Desventajas</span>
 
-<div class="flex justify-center items-center">
-  <div class="card mt-5">
-    <img
-      src="/aica-projects.webp"
-      alt="Ecosistema AICA+"
-      class="card-image"
-    />
-  </div>
-</div>
-
-<footer style="color: #05d8f3; font-weight: bold;" class="fade-in abs-b m-6 text-center">
-  © 2025 <a href="https://www.aica.cu" target="_blank">AICA+</a>
-</footer>
+<section>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+            <div class="space-y-8 text-xl font-semibold leading-relaxed drop-shadow-md list-none">
+                  <v-click><p>📁 Si se va a la luz, se corrompe la bd o la computadora muere, ¡adiós proyecto!</p></v-click>
+                  <v-click><p>🚫 Nadie puede colaborar contigo, si tienes un problema eres tú contra ese proyecto en soledad.</p></v-click>
+                  <v-click><p>🐢 Si el proyecto crece, el desarrollo se vuelve lento, todo depende de tu PC de la NASA.</p></v-click>
+            </div>
+        </div>
+    </div>
+</section>
 
 <style>
-.card {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
 
-.card-image {
-  width: 500px;
-  height: auto;
-  border-radius: 12px;
-}
+---
+layout: two-cols
+class: text-center p-12
+transition: slide-up
+---
 
-h1 {
-    background-color: #81dbff;
-    background-image: linear-gradient(45deg, #89effd 20%, #46c0ed 50%);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-}
+<div class="flex fade-in items-center justify-center h-full">
+  <img class="h-90" src="/central.png" alt="central" />
+</div>
+
+::right::
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">VCS Centralizados</span>
+
+<section>
+    <div class="m-2 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-5 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h3 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Todo se almacena en un único repositorio central en un servidor,
+            desde donde los desarrolladores descargan copias locales para trabajar y luego suben sus cambios para
+            crear nuevas versiones.
+          </h3>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: center
+class: text-center p-12
+transition: slide-left
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Desventajas</span>
+
+<section>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+            <div class="space-y-8 text-xl font-semibold leading-relaxed drop-shadow-md list-none">
+                  <v-click><p>🖥️ Si el servidor muere, ¡adiós proyecto!</p></v-click>
+                  <v-click><p>🔒 Solo uno puede tocar un archivo a la vez, por lo que si alguien lo bloquea te toca esperar.</p></v-click>
+                  <v-click><p>🐢 Todo pasa por un solo lugar, por lo que todo depende de cuánto dinero le hayas puesto al servidor.</p></v-click>
+                  <v-click><p>🤹‍♂️ Cuando logras subir tus cambios, puede que haya un sinfín de conflictos que hay que arreglar rápido para que el equipo no se atrase.</p></v-click>
+                  <v-click><p>⚡ Si a todo esto le sumamos Etecsa y su magnífica conexión...</p></v-click>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: two-cols
+class: text-center p-12
+transition: slide-up
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">VCS Distribuidos</span>
+
+<section>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h3 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Todos los desarrolladores tienen su propia copia del repositorio, con todas las versiones y 
+            toda la historia
+          </h3>
+        </div>
+    </div>
+</section>
+
+::right::
+
+<div class="flex fade-in items-center justify-center h-full">
+  <img class="h-90" src="/distribuido.png" alt="distribuido" />
+</div>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: center
+class: text-center p-12
+transition: slide-left
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Solo Ventajas</span>
+
+<section>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+            <div class="space-y-8 text-xl font-semibold leading-relaxed drop-shadow-md list-none">
+                  <v-click><p>🖥️ Puedes hacer cambios y operaciones desde tu laptop sin conectarte.</p></v-click>
+                  <v-click><p>⚡ Todas las operaciones son instantáneas, no tienes que esperar que el servidor responda .</p></v-click>
+                  <v-click><p>🛡️ Si el servidor central se cae, o se te rompe la laptop, cada quien tiene el respaldo del repositorio completo.</p></v-click>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: two-cols
+class: text-center p-12
+transition: slide-up
+---
+
+<div class="flex fade-in items-center justify-center h-full">
+  <img class="h-90" src="/vcs.png" alt="central" />
+</div>
+
+::right::
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Git</span>
+
+<section>
+    <div class="m-2 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-5 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h4 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Creado en abril de 2005 por Linus Torvalds para gestionar eficientemente el código del kernel de Linux,
+            tras perder acceso a BitKeeper. Hoy es el VCS más popular del mundo, siendo usado por más de 100 millones
+            de desarrolladores en proyectos tanto comerciales como de código abierto
+          </h4>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>
 
 ---
 transition: slide-up
+class: text-center
+layout: center
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Instalando Git</span>
+
+<section>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+            <div class="space-y-8 text-xl font-semibold leading-relaxed drop-shadow-md list-none">
+                  <v-click><p>🍎 <em>MacOS:</em> <code>brew install git</code>.</p></v-click>
+                  <v-click><p>🐧 <em>Fedora Distros:</em> <code>yum install git-core</code>.</p></v-click>
+                  <v-click><p>🌀 <em>Debian Distros:</em> <code>apt-get install git-core</code>.</p></v-click>
+                  <v-click><p>🪟 <em>Windows:</em> Descargar el instalador y seguir las instrucciones en <a href="https://git-scm.com/download/win">git-scm/windows</a>.</p></v-click>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+transition: slide-left
+class: text-center
+layout: center
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Configurando Git</span>
+
+<section>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+            <div class="space-y-8 text-xl font-semibold leading-relaxed drop-shadow-md list-none">
+                  <v-click><p>👤 <em>Nombre:</em> <code>git config --global user.name "Eduardo González"</code>.</p></v-click>
+                  <v-click><p>📧 <em>Email:</em> <code>git config --global user.email "eduardoprofe666@gmail.com"</code>.</p></v-click>
+                  <v-click><p>⚙️ <em>Revisa la configuración:</em> <code>git config --list</code>. Esta se guarda en el Home en <code>.gitconfig</code></p></v-click>
+                  <v-click><p>❓ <em>Ayuda:</em> <code>git config --help</code>o en  <a href="https://git-scm.com/docs">git-scm/docs</a>.</p></v-click>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
 layout: center
 class: text-center
+transition: slide-up
 ---
 
-# ¿Preguntas?
-
-<div
-  v-motion
-  :initial="{ scale: 0.8, opacity: 0 }"
-  :enter="{ scale: 1, opacity: 1 }"
-  class="mt-8"
->
-  <div class="text-2xl text-[#0097a7] mb-4">
-    ¿Tienes alguna duda o comentario?
-  </div>
-
-  <div class="text-gray-600">
-    Dispara 🔫
-  </div>
-</div>
-
-<div
-  v-motion
-  :initial="{ y: 50, opacity: 0 }"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 500 } }"
-  class="mt-12"
->
-  <img
-    class="mx-auto w-32 opacity-50"
-    src="/question.webp"
-  />
-</div>
-
-<footer style="color: #05d8f3; font-weight: bold;" class="fade-in abs-b m-6 text-center">
-  © 2025 <a href="https://www.aica.cu" target="_blank">AICA+</a>
-</footer>
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Principales Conceptos y Comandos</span>
 
 <style>
-h1 {
-    background-color: #81dbff;
-    background-image: linear-gradient(45deg, #89effd 20%, #46c0ed 50%);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-}
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: two-cols
+class: text-center p-12
+transition: slide-up
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Repositorios</span>
+
+<section>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h4 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Un repositorio es una carpeta o conjunto de carpetas que contienen archivos. Es la unidad fundamental
+            de <em>Git</em>. <br> Para crear un repositorio usa <code>git init .</code>
+          </h4>
+        </div>
+    </div>
+</section>
+
+::right::
+
+<div class="flex fade-in items-center justify-center h-full">
+  <img class="h-90" src="/repositorio.png" alt="repo" />
+</div>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: two-cols
+class: text-center p-12
+transition: slide-up
+---
+
+<div class="flex fade-in items-center justify-center h-full">
+  <img class="h-90" src="/status.png" alt="status" />
+</div>
+
+::right::
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Estado del Repositorio</span>
+
+<section>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h4 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Usando <code>git status</code> se puede saber que cambios hay actualmente en el repositorio
+            con respecto a la versión anterior.
+          </h4>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: center
+class: text-center p-12
+transition: slide-up
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Add y Commit</span>
+
+<section class="flex gap-8 justify-center">
+    <div class="m-8 w-1/2 bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h2 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Add
+          </h2>
+          <h4 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            El comando <code>git add .</code> permite confirmar que todos los cambios realizados se quieren salvar.
+          </h4>
+        </div>
+    </div>
+    <div class="m-8 w-1/2 bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h2 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Commit
+          </h2>
+          <h4 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            El comando <code>git commit -m "Commit Inicial"</code> permite consolidar los cambios confirmados como una version nueva, especificando un mensaje informativo.
+          </h4>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: center
+class: text-center p-12
+transition: slide-up
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">¿Cómo nombrar commits?</span>
+
+<section class="flex gap-2 justify-center">
+    <v-click>
+    <div class="m-2  w-1/2 bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h2 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Versionado Semántico
+          </h2>
+          <h4 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Estándar que utiliza un formato de tres números para comunicar de forma clara y consistente el tipo de cambios realizados en una versión de software, facilitando así la gestión y compatibilidad entre proyectos.  
+            <br>
+            Por ejemplo <code>1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.</code>
+            <br>
+            Encuentra más información en <a href="https://semver.org/lang/es/">semver.org</a>.
+          </h4>
+        </div>
+    </div>
+    </v-click>
+    <v-click>
+    <div class="m-2  w-1/2 bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h2 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Commits Convencionales
+          </h2>
+          <h4 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Convención para escribir mensajes de commit con un formato claro y estructurado que facilita la comprensión tanto para personas como para máquinas. 
+            <br>
+            Se usan etiquetas como <code>feat</code>, <code>fix</code>, <code>refactor</code> y <code>chore</code>.
+            <br>
+            Encuentra más información en <a href="https://www.conventionalcommits.org/es/v1.0.0/">conventionalcommits.org</a>.
+          </h4>
+        </div>
+    </div>
+    </v-click>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: center
+class: text-center p-12
+transition: slide-up
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Ramas</span>
+
+<section class="flex gap-2 justify-center">
+    <div class="m-8 w-1/2 bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h2 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            ¿Qué es una rama?
+          </h2>
+          <h4 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Una rama en Git es un puntero a un commit. La rama por defecto es <code>master</code> o <code>main</code>. Con el primer commit que realicemos, se creará esta rama principal apuntando a ese commit. En cada commit que realicemos, la rama irá avanzando automáticamente. 
+          </h4>
+        </div>
+    </div>
+    <div class="m-8 w-1/2 bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h2 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Comandos útiles
+          </h2>
+            <div class="space-y-8 text-lg font-semibold leading-relaxed drop-shadow-md list-none">
+                  <p>🌱 <em>Crear rama:</em> <code>git branch development</code>.</p>
+                  <p>📋 <em>Listar ramas:</em> <code>git branch</code>.</p>
+                  <p>🔀 <em>Cambiar entre ramas:</em> <code>git checkout hotfix</code>.</p>
+                  <p>🪢 <em>Fusionar cambios:</em> <code>git merge master</code>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: center
+class: text-center p-12
+transition: slide-up
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Estrategias para <em>branching</em></span>
+
+<section class="flex gap-2 justify-center">
+    <v-click>
+    <div class="m-2  w-1/2 bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h2 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Git Flow
+          </h2>
+          <h4 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Propuesta por Vincent Driessen, es una estrategia estructurada que usa varias ramas:
+            <div class="space-y-4 text-md font-semibold leading-relaxed drop-shadow-md list-none">
+                  <p>🌿 <em>Producción:</em> <code>main</code> o <code>master</code>.</p>
+                  <p>🔄 <em>Integración de funcionalidades:</em> <code>develop</code> o <code>dev</code>.</p>
+                  <p>✨ <em>Nuevas funcionalidades:</em> <code>feature</code>.</p>
+                  <p>🏷️ <em>Preparar versiones:</em> <code>release</code>.</p>
+                  <p>🚑 <em>Correcciones urgentes en producción:</em> <code>hotfix</code>.</p>
+            </div>
+          </h4>
+        </div>
+    </div>
+    </v-click>
+    <v-click>
+    <div class="m-2  w-1/2 bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h2 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Trunk-Based Development
+          </h2>
+          <h4 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Todos los desarrolladores trabajan en una sola rama principal (<code>trunk</code> o <code>main</code>), integrando
+            cambios frecuentemente con ramas de corta duración para nuevas funcionalidades o correcciones.
+          </h4>
+        </div>
+    </div>
+    </v-click>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: center
+class: text-center p-12
+transition: slide-up
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Trabajo en Remoto</span>
+
+<section class="flex gap-2 justify-center">
+    <div class="m-4 w-1/2 bg-white bg-opacity-20 rounded-xl p-4 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h2 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            ¿Qué es una remote?
+          </h2>
+          <h4 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Es un alias que apunta a un repositorio externo, generalmente alojado en un servidor como GitHub, con el cual tu repositorio local se conecta para enviar y recibir cambios. Funciona como un marcador que facilita la colaboración y sincronización entre desarrolladores sin acceso en tiempo real directo al repositorio remoto. 
+            <br>
+            Por lo general se conoce como <code>origin</code>.
+          </h4>
+        </div>
+    </div>
+    <div class="m-4 w-1/2 bg-white bg-opacity-20 rounded-xl p-4 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h2 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Comandos útiles
+          </h2>
+            <div class="space-y-8 text-lg font-semibold leading-relaxed drop-shadow-md list-none">
+                  <p>🛠️ <em>Clonar repo remoto:</em> <code>git clone <em>repo</em></code>.</p>
+                  <p>📤 <em>Subir cambios pendientes:</em> <code>git push</code>.</p>
+                  <p>👀 <em>Obtener cambios de remoto:</em> <code>git fetch origin</code>.</p>
+                  <p>📥 <em>Fusionar cambios de remoto:</em> <code>git pull</code>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+transition: slide-up
+class: text-center
+layout: center
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Otros Comandos</span>
+
+<section>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+            <div class="space-y-8 text-xl font-semibold leading-relaxed drop-shadow-md list-none">
+                  <v-click><p>👀 <em>Diferencias entre versiones:</em> <code>git diff</code>.</p></v-click>
+                  <v-click><p>📜 <em>Historial de cambios:</em> <code>git log</code>.</p></v-click>
+                  <v-click><p>🔄 <em>Cancelar los cambios:</em> <code>git checkout -- file</code>.</p></v-click>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: center
+class: text-center p-12
+transition: slide-left
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Recurso para aprender Git</span>
+
+<section>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h3 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            El recurso <a href="https://learngitbranching.js.org/?locale=es_ES">learngitbranching</a> permite aprender de manera fácil e incremental todos los conceptos y comandos de Git en profundidad, a través juegos de comandos por consola.
+          </h3>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: two-cols
+class: text-center p-12
+transition: slide-up
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">GitHub</span>
+
+<section>
+    <div class="m-2 w-full  bg-white bg-opacity-20 rounded-xl p-2 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h3 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            GitHub es una plataforma en la nube que permite almacenar, compartir y colaborar en proyectos
+            de código usando Git, facilitando el seguimiento y la gestión de cambios a lo largo del tiempo,
+            y promoviendo el trabajo colaborativo entre desarrolladores.
+          </h3>
+        </div>
+    </div>
+</section>
+
+::right::
+
+<div class="flex fade-in items-center justify-center h-full">
+  <img class="h-60" src="/github.png" alt="github" />
+</div>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: center
+class: text-center p-12
+transition: slide-left
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Facilidades de GitHub</span>
+
+<section>
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+            <div class="space-y-6 text-lg font-semibold leading-relaxed drop-shadow-md list-none">
+                  <v-click><p>🤖 Con GitHub Actions puedes automatizar la compilación y ejecución de pruebas cada vez que se hacen cambios en el repositorio, detectando errores rápidamente y asegurando la calidad del código antes de integrarlo.</p></v-click>
+                  <v-click><p>🚀 Permite configurar flujos de trabajo que despliegan automáticamente las aplicaciones tras pasar las pruebas, facilitando la entrega continua y reduciendo errores manuales.</p></v-click>
+                  <v-click><p>🧪 Los flujos de trabajo pueden incluir pruebas unitarias, funcionales y análisis estático de código para validar el software en cada cambio.</p></v-click>
+                  <v-click><p>👥 GitHub facilita el control de versiones, revisión de código mediante pull requests, gestión de ramas y colaboración entre equipos, todo integrado en la plataforma.</p></v-click>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: two-cols
+class: text-center p-12
+transition: slide-up
+---
+
+# <span class="text-4xl fade-in text-center font-extrabold drop-shadow-lg">Caso de estudio</span>
+
+<section>
+    <div class="m-6 w-full  bg-white bg-opacity-20 rounded-xl p-6 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h3 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Aplicación web instalable para el análisis en tiempo real de las tasas de cambio de divisas en el mercado informal cubano, con tecnología de elToque.
+            <br>
+            Disponible en <br> <a href="https://tasas-cuba.vercel.app">tasas-cuba.vercel.app</a>
+          </h3>
+        </div>
+    </div>
+</section>
+
+::right::
+
+<div class="flex fade-in items-center justify-center h-full">
+  <img class="h-60" src="/tasas-cuba.png" alt="tasas-cuba" />
+</div>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: center
+class: text-center p-12
+transition: slide-up
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Commits y Branching</span>
+
+<section class="flex items-center justify-center">
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+            <img class="h-80" src="/tc-repo.png" alt="repo"/>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: center
+class: text-center p-12
+transition: slide-up
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Despliegues Automatizados</span>
+
+<section class="flex items-center justify-center">
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+            <img class="h-80" src="/tc-deploy.png" alt="repo"/>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: center
+class: text-center p-12
+transition: slide-left
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">Pruebas Automatizadas</span>
+
+<section class="flex items-center justify-center">
+    <div class="m-8 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-8 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+            <img class="h-80" src="/tc-tests.png" alt="repo"/>
+        </div>
+    </div>
+</section>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: two-cols
+class: text-center p-12
+transition: slide-left
+---
+
+<div class="flex fade-in items-center justify-center h-full">
+  <img class="h-90" src="/slidev.png" alt="slidev" />
+</div>
+
+::right::
+
+<section class="flex fade-in items-center justify-center h-full">
+    <div class="m-6 w-full max-w-4xl bg-white bg-opacity-20 rounded-xl p-6 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+          <h3 class="text-2xl font-semibold leading-relaxed drop-shadow-md">
+            Powered by <a href="https://sli.dev">sli.dev</a> y <a href="https://vuejs.org">Vue</a>
+          </h3>
+          <h3 class="text-2xl  leading-relaxed drop-shadow-md">
+            Disponible en <br> <a href="https://vcs-jce.netlify.app/">vcs-presentation.netlify.app</a>
+          </h3>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+---
+layout: center
+class: text-center
+transition: slide-left
+---
+
+# <span class="text-6xl fade-in font-extrabold drop-shadow-lg">¿Preguntas y/o Comentarios?</span>
+
+<style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>
 
 ---
@@ -611,14 +1509,21 @@ transition: slide-left
 
 # <span class="fade-in">Gracias por su atención</span>
 
-<div class="abs-br m-6 text-xl fade-in">
-  <a href="https://github.com/EduardoProfe666/aica-industry-4.0" target="_blank" class="slidev-icon-btn">
+<div class="text-slate-100 abs-br m-6 text-xl fade-in flex space-x-4">
+  <a href="https://github.com/EduardoProfe666/vcs-presentation" target="_blank" class="slidev-icon-btn" aria-label="Código fuente presentación GitHub">
     <carbon:logo-github />
+  </a>
+  <a href="https://tasas-cuba.vercel.app/" target="_blank" class="slidev-icon-btn" aria-label="Ir a la aplicación tasas-cuba">
+    <carbon:app />
+  </a>
+
+  <a href="https://github.com/EduardoProfe666/tasas-cuba" target="_blank" class="slidev-icon-btn" aria-label="Código fuente de la aplicación tasas-cuba en GitHub">
+    <carbon:kubernetes-pod />
   </a>
 </div>
 
 <footer style="color: #05d8f3; font-weight: bold;" class="fade-in abs-b m-6">
-  © 2025 <a href="https://www.aica.cu" target="_blank">AICA+</a>
+  <a href="https://eduardoprofe666.github.io" target="_blank">Ing. Eduardo Alejandro González Martell</a>
 </footer>
 
 <style>
@@ -628,10 +1533,10 @@ transition: slide-left
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/aica-3.webp');
+    background-image: url('/banner-final.webp');
     background-size: cover;
     background-position: center;
-    filter: blur(3px);
+    filter: blur(8px);
     z-index: -1;
   }
 
