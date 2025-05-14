@@ -95,25 +95,38 @@ con tecnología de elToque
 
 ---
 layout: center
+class: text-center p-12
 transition: slide-left
 ---
 
-<div class="image"></div>
+# <span class="text-4xl fade-in font-extrabold drop-shadow-lg">Controlar versiones del proyecto</span>
+
+<section class="flex items-center justify-center">
+    <div class="m-3 max-w-3xl mx-auto bg-white bg-opacity-20 rounded-xl p-3 shadow-2xl">
+        <div 
+          v-motion 
+          :initial="{ opacity: 0, scale: 0.85, y: 20 }" 
+          :enter="{ opacity: 1, scale: 1, y: 0, transition: { delay: 150, duration: 600, ease: 'easeOut' } }"
+        >
+            <img class="h-100" src="/folders.png" alt="repo"/>
+        </div>
+    </div>
+</section>
 
 <style>
-  .image {
-    content: "";
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    background-image: url('/folders.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    z-index: -1;
-    pointer-events: none;
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
 
@@ -1451,7 +1464,7 @@ transition: slide-left
             Powered by <a href="https://sli.dev">sli.dev</a> y <a href="https://vuejs.org">Vue</a>
           </h3>
           <h3 class="text-2xl  leading-relaxed drop-shadow-md">
-            Disponible en <br> <a href="https://vcs-jce.netlify.app/">vcs-presentation.netlify.app</a>
+            Disponible en <br> <a href="https://vcs-jce.netlify.app/">vcs-jce.netlify.app</a>
           </h3>
         </div>
     </div>
